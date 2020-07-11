@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment2"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    >
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="421dp"
+        android:layout_height="80dp"
+        android:text="Escribe la palabra que crees que se está articulando en el siguiente video"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+
+    <VideoView
+        android:id="@+id/videoViewF3"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"/>
+
+    <Button
+        android:id="@+id/btnReproducir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = "Reproducir" />
+
+    <EditText
+        android:id="@+id/etEntrada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#207FAB"/>
+
+
+    <Button
+        android:id="@+id/btnVerificar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = "Verificar" />
+</LinearLayout>

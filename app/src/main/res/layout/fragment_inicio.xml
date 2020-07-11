@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/design_default_color_primary_dark"
+    tools:context=".Inicio"
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="134dp"
+        android:text="Selecciona la actividad que desees"
+        android:textSize="23sp"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        tools:context=".Inicio">
+    <Button
+        android:id="@+id/boton1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Identificación de sonidos"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        />
+    <Button
+        android:id="@+id/boton2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rima de palabras"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        />
+    <Button
+        android:id="@+id/boton3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Articulación de palabras"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        />
+    </LinearLayout>
+
+</LinearLayout>

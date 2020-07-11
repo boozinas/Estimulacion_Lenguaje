@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment2"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="\n Toca las imágenes para escuchar las palabras \n\n\n\n"
+
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+<GridLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:columnCount="3"
+    android:rowCount="2"
+    android:layout_gravity="center"
+    android:alignmentMode="alignMargins"
+    android:layout_marginBottom="30dp"
+    android:layout_marginTop="30dp">
+
+    <ToggleButton
+        android:id="@+id/btnSonido1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/checktaza"
+        android:textOff="\u274c"
+        android:textOn="\u2705"
+        android:text="Taza" />
+
+    <ToggleButton
+        android:id="@+id/btnSonido2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/checkmochila"
+        android:textOff="\u274c"
+        android:textOn="\u2705"
+        android:text="Taza" />
+    <ToggleButton
+        android:id="@+id/btnSonido3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/checkcalabaza"
+        android:textOff="\u274c"
+        android:textOn="\u2705"
+        android:text="Taza" />
+
+    <ToggleButton
+        android:id="@+id/btnSonido4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/checkbrincar"
+        android:textOff="\u274c"
+        android:textOn="\u2705"
+        android:text="Taza" />
+        android:text="Palabra 4" />
+    <ToggleButton
+        android:id="@+id/btnSonido5"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/checkavion"
+        android:textOff="\u274c"
+        android:textOn="\u2705"
+        android:text="Taza" />
+    <ToggleButton
+        android:id="@+id/btnSonido6"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/checkmostaza"
+        android:textOff="\u274c"
+        android:textOn="\u2705"
+        android:text="Taza" />
+</GridLayout>
+
+
+    <Button
+        android:id="@+id/btnVerificarF2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = "Verificar" />
+
+    <TextView
+        android:id="@+id/tvCheckF2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+
+
+</LinearLayout>
