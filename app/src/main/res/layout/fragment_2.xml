@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
     tools:context=".Fragment2"
     android:orientation="vertical"
-    android:background="@color/colorPrimary">
+    android:background="@drawable/fondo3_1">
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="\n Toca las imágenes para escuchar las palabras \n\n\n\n"
+        android:text="\n Toca las imágenes para escuchar las palabras y selecciona las que riman"
 
         android:gravity="center"
         android:textColor="#FFFFFF"
@@ -27,54 +29,66 @@
 
     <ToggleButton
         android:id="@+id/btnSonido1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:background="@drawable/checktaza"
         android:textOff="\u274c"
         android:textOn="\u2705"
+        android:textSize="25dp"
+        android:layout_margin="@dimen/cardview_default_radius"
         android:text="Taza" />
 
     <ToggleButton
         android:id="@+id/btnSonido2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:background="@drawable/checkmochila"
         android:textOff="\u274c"
         android:textOn="\u2705"
+        android:textSize="25dp"
+        android:layout_margin="@dimen/cardview_default_radius"
         android:text="Taza" />
     <ToggleButton
         android:id="@+id/btnSonido3"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:background="@drawable/checkcalabaza"
         android:textOff="\u274c"
         android:textOn="\u2705"
+        android:textSize="25dp"
+        android:layout_margin="@dimen/cardview_default_radius"
         android:text="Taza" />
 
     <ToggleButton
         android:id="@+id/btnSonido4"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:background="@drawable/checkbrincar"
         android:textOff="\u274c"
         android:textOn="\u2705"
+        android:textSize="25dp"
+        android:layout_margin="@dimen/cardview_default_radius"
         android:text="Taza" />
         android:text="Palabra 4" />
     <ToggleButton
         android:id="@+id/btnSonido5"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:background="@drawable/checkavion"
         android:textOff="\u274c"
         android:textOn="\u2705"
+        android:textSize="25dp"
+        android:layout_margin="@dimen/cardview_default_radius"
         android:text="Taza" />
     <ToggleButton
         android:id="@+id/btnSonido6"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:textSize="25dp"
         android:background="@drawable/checkmostaza"
         android:textOff="\u274c"
         android:textOn="\u2705"
+        android:layout_margin="@dimen/cardview_default_radius"
         android:text="Taza" />
 </GridLayout>
 
@@ -93,6 +107,21 @@
         android:gravity="center"
         android:textColor="#FFFFFF"
         android:textSize="20sp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btLVL3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:fabCustomSize="80dp"
+        android:clickable="true"
+        android:text="Siguiente nivel"
+        android:src="@drawable/next_png_b3"
+        android:scaleType="center"/>
 
 
 

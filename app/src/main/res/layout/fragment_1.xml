@@ -7,7 +7,7 @@
     tools:context=".Fragment1"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="@color/design_default_color_primary">
+    android:background="@drawable/fondo2">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,16 +15,7 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textViewRelleno"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="\n"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
-
-        <TextView
+            <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -46,7 +37,7 @@
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
-            android:layout_height="118dp"
+            android:layout_height="80dp"
             android:src="@android:drawable/ic_lock_silent_mode_off" />
 
         <Button
@@ -65,26 +56,54 @@
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
+ <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="1"
+            android:layout_gravity="center"
+            android:alignmentMode="alignMargins"
+            android:layout_marginBottom="10dp"
+            android:layout_margin="@dimen/cardview_default_radius"
+            android:layout_marginTop="10dp">
         <ImageView
             android:id="@+id/ivImagen1F1"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
             android:adjustViewBounds="true"
+            android:layout_margin="@dimen/cardview_default_radius"
             android:src="@drawable/viento" />
 
         <ImageView
             android:id="@+id/ivImagen2F1"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
             android:adjustViewBounds="true"
+            android:layout_margin="@dimen/cardview_default_radius"
             android:src="@drawable/lluvia" />
 
         <ImageView
             android:id="@+id/ivImagen3F1"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
             android:adjustViewBounds="true"
             android:src="@drawable/sol" />
+ </GridLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btLVL2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom|right"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            app:fabCustomSize="80dp"
+            android:clickable="true"
+            android:text="Siguiente nivel"
+            android:src="@drawable/next_png_b3"
+            android:scaleType="center"/>
 
     </LinearLayout>
 

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +17,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Arrays;
 
@@ -25,6 +29,7 @@ import java.util.Arrays;
 public class Fragment1 extends Fragment {
     //MediaPlayer reproductor;
     Button btPlay;
+    FloatingActionButton btNextLVL;
     ImageView ivImage1, ivImage2, ivImage3;
     TextView tvCheck;
     boolean respuestaTF;
@@ -52,12 +57,11 @@ public class Fragment1 extends Fragment {
     int[] listaImagenesCaballo = new int[]{R.drawable.caballo, R.drawable.vaca, R.drawable.perro};
     int[] listaImagenesDelfin = new int[]{R.drawable.vaca, R.drawable.delfin,  R.drawable.perro};
     int[] listaImagenesVaca = new int[]{R.drawable.perro, R.drawable.caballo, R.drawable.vaca};
-    int[] listaImagenesLicuadora = new int[]{R.drawable.aspiradora, R.drawable.lavadora, R.drawable.licuadora};
-
+    int[] listaImagenesLicuadora = new int[]{R.drawable.aspiradora_r, R.drawable.lavadora_r, R.drawable.licuadora_r};
 
     MediaPlayer sound;
     public Fragment1() {
-        rutasSonidos = new int[]{R.raw.viento_r, R.raw.lluvia_r, R.raw.sarten_r, R.raw.caballo_r, R.raw.delfin_r, R.raw.vaca_r, R.raw.licuadora_r};
+        rutasSonidos = new int[]{R.raw.viento_r, R.raw.lluvia_r, R.raw.sarten_r, R.raw.caballo_r, R.raw.delfin_r, R.raw.vaca_r_r, R.raw.licuadora_r};
         indiceListasImagenes = 0;
         indicePalabras = 0;
         puntaje = 0;
@@ -100,6 +104,8 @@ public class Fragment1 extends Fragment {
 
         respuesta = new int[]{0,0,0};
         btPlay = (Button)view.findViewById(R.id.btnReproducirF1);
+        btNextLVL = (FloatingActionButton)view.findViewById(R.id.btLVL2);
+        btNextLVL.hide();
         //etEntrada = (EditText)view.findViewById(R.id.etEntradaF1);
         tvCheck = (TextView)view.findViewById(R.id.textViewCheckF1);
         //ImageView de las imagenes
@@ -154,9 +160,19 @@ public class Fragment1 extends Fragment {
         btPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sound.stop();
+                sound.release();
                 sound = MediaPlayer.create(getContext(), rutaSonido);
                 sound.start();
                 tvCheck.setText("");
+            }
+        });
+
+        final NavController navController = Navigation.findNavController(view);
+        btNextLVL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.fragment2);
             }
         });
     }
@@ -181,7 +197,8 @@ public class Fragment1 extends Fragment {
             System.out.println("El puntaje: "+ puntaje);
             if(puntaje >= listaRespuestas.length){
                 tvCheck.setText("PERFECTO \n JUEGO TERMINADO");
-                sound = MediaPlayer.create(getContext(), R.raw.felicidades_has_termiando);
+                btNextLVL.show();
+                sound = MediaPlayer.create(getContext(), R.raw.f_has_pasado_siguiente_nivel);
                 sound.start();
             }
             //Colocación de todas las imagenes automáticamente

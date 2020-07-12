@@ -1,5 +1,6 @@
 package com.example.prueba1;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.StateListDrawable;
 import android.media.MediaPlayer;
@@ -14,6 +15,10 @@ import android.widget.ToggleButton;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Arrays;
 
@@ -24,6 +29,8 @@ import java.util.Arrays;
  */
 public class Fragment2 extends Fragment {
     MediaPlayer sound;
+    FloatingActionButton btNextLVL;
+
     int[][] listaImagenes;
     int[] listaImagenes1;
     int[] listaImagenes2;
@@ -76,6 +83,8 @@ public class Fragment2 extends Fragment {
         indiceSonido = 0;
         sound = MediaPlayer.create(getContext(), R.raw.ahora_escucha_bien);
         sound.start();
+        btNextLVL = (FloatingActionButton)view.findViewById(R.id.btLVL3);
+        btNextLVL.hide();
 
         final ToggleButton btSonido1 = (ToggleButton) view.findViewById(R.id.btnSonido1);
         final ToggleButton btSonido2 = (ToggleButton)view.findViewById(R.id.btnSonido2);
@@ -93,6 +102,9 @@ public class Fragment2 extends Fragment {
         btSonido1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sound.stop();
+                sound.release();
+                //stopAndPlay(sound, listaSonidos[0][0], getContext());
                 sound = MediaPlayer.create(getContext(), listaSonidos[0][0]);
                 sound.start();
             }
@@ -102,40 +114,55 @@ public class Fragment2 extends Fragment {
         btSonido2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sound.stop();
+                sound.release();
                 sound = MediaPlayer.create(getContext(), listaSonidos[0][1]);
                 sound.start();
+                //stopAndPlay(sound, listaSonidos[0][1], getContext());
             }
         });
 
         btSonido3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sound.stop();
+                sound.release();
                 sound = MediaPlayer.create(getContext(), listaSonidos[0][2]);
                 sound.start();
+                //stopAndPlay(sound, listaSonidos[0][2], getContext());
             }
         });
 
         btSonido4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sound.stop();
+                sound.release();
                 sound = MediaPlayer.create(getContext(), listaSonidos[0][3]);
                 sound.start();
+                //stopAndPlay(sound, listaSonidos[0][3], getContext());
             }
         });
 
         btSonido5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sound.stop();
+                sound.release();
                 sound = MediaPlayer.create(getContext(), listaSonidos[0][4]);
                 sound.start();
+                //stopAndPlay(sound, listaSonidos[0][4], getContext());
             }
         });
 
         btSonido6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sound.stop();
+                sound.release();
                 sound = MediaPlayer.create(getContext(), listaSonidos[0][5]);
                 sound.start();
+                //stopAndPlay(sound, listaSonidos[0][5], getContext());
             }
         });
 
@@ -177,8 +204,9 @@ public class Fragment2 extends Fragment {
                 if(Arrays.equals(respuesta, listaRespuestas[0])){
                     tvCheck.setTextColor(Color.GREEN);
                     tvCheck.setText("¡CORRECTO!");
-                    sound = MediaPlayer.create(getContext(), R.raw.felicidades_has_termiando);
+                    sound = MediaPlayer.create(getContext(), R.raw.f_has_pasado_al_ultimo_nivel);
                     sound.start();
+                    btNextLVL.show();
                 }
                 else{
                     tvCheck.setTextColor(Color.RED);
@@ -188,6 +216,35 @@ public class Fragment2 extends Fragment {
             }
         });
 
+        final NavController navController = Navigation.findNavController(view);
+        btNextLVL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.fragment3);
+            }
+        });
+
+    }
+
+    private void stopAndPlay (MediaPlayer sound, int direccion, Context ctx){
+        if(sound!=null){
+
+            if(sound.isPlaying()){
+
+                sound.stop();
+                sound.release();
+            }
+            else{
+                sound.release();
+            }
+
+            sound = MediaPlayer.create(ctx, direccion);
+            sound.start();
+        }
+        else{
+            sound = MediaPlayer.create(ctx, direccion);
+            sound.start();
+        }
     }
 
 }

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/design_default_color_primary_dark"
+    android:background="@drawable/fondo1"
     tools:context=".Inicio"
     >
 
@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="134dp"
-        android:text="Selecciona la actividad que desees"
+        android:text="Selecciona una actividad"
         android:textSize="23sp"
         android:gravity="center"
         android:textColor="#FFFFFF"

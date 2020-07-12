@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">Prototipo App</string>
+    <string name="app_name">Improve your speech</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="sonido">Sonido</string>
+    <string name="siguiente_nivel">Siguiente nivel</string>
 </resources>

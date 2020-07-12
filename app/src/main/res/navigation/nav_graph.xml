@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_fragment1_to_inicio"
             app:destination="@id/inicio" />
+        <action
+            android:id="@+id/action_fragment1_to_fragment2"
+            app:destination="@id/fragment2" />
     </fragment>
     <fragment
         android:id="@+id/fragment2"
@@ -37,6 +40,9 @@
         <action
             android:id="@+id/action_fragment2_to_inicio"
             app:destination="@id/inicio" />
+        <action
+            android:id="@+id/action_fragment2_to_fragment3"
+            app:destination="@id/fragment3" />
     </fragment>
     <fragment
         android:id="@+id/fragment3"
